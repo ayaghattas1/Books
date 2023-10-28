@@ -1,19 +1,20 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const bookSchema = new mongoose.Schema({
+const bookSchema = new Schema({
   titre: {
     type: String,
     required: true
   },
   auteur: {
-    type: String,
-    required: true
+    type: mongoose.Types.ObjectId,
+    ref: 'Auteur'
   },
+  categorie: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Categorie'
+  }],
   edition: {
-    type: String,
-    required: true
-  },
-  genre: {
     type: String,
     required: true
   },
@@ -21,12 +22,6 @@ const bookSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  nb_pages: {
-    type: Number,
-    required: true
-  }
 });
 
-const Book = mongoose.model('Book', bookSchema);
-
-module.exports = Book;
+module.exports = Book = mongoose.model("Book", bookSchema);

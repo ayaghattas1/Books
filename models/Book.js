@@ -11,7 +11,7 @@ const bookSchema = new Schema({
     ref: 'Auteur'
   },
   categorie: [{
-    type: Schema.Types.ObjectId,
+    type: mongoose.Types.ObjectId,
     ref: 'Categorie'
   }],
   edition: {

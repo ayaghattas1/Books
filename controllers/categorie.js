@@ -1,8 +1,8 @@
-/*const Categorie = require("../models/categorie");
+const Categorie = require("../models/categorie");
 
 const addCategorie = (req, res) => {
-    const newAuteur = new Categorie(req.body);
-    newAuteur.save()
+    const newCategorie = new Categorie(req.body);
+    newCategorie.save()
         .then(categorie => {
             res.json(categorie);
         })
@@ -13,4 +13,4 @@ const addCategorie = (req, res) => {
 
 module.exports = {
     addCategorie,
-};*/
+};

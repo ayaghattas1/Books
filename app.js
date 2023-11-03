@@ -1,7 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const auteurRouter= require("./routes/auteur")
-const bookRouter= require("./routes/book");
+const bookRouter= require("./routes/book")
+const categorieRouter= require("./routes/categorie");
+
 //const categorieRouter= require("./routes/categorie")
 
 
@@ -31,6 +33,8 @@ mongoose.connect("mongodb://127.0.0.1:27017/Biblio",{
 
 app.use("/api/book", bookRouter)
 app.use("/api/auteur",auteurRouter)
+app.use("/api/categorie",categorieRouter)
+
 //app.use("/api/categorie",categorieRouter)
 
 module.exports = app;
